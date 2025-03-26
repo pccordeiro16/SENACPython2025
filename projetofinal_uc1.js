@@ -1,65 +1,73 @@
-/* SISTEMA ESCOLAR COM POO:
+//2
 
-  * Crie um sistema que inclua:
-  * Classe Aluno (nome, matrícula, notas, curso)
-  * Métodos: calcularMedia(), adicionarNota()
-  * Classe Professor (nome, departamento, disciplinas)
-  * Métodos: atribuirDisciplina(), listarTurmas()
-  * Classe Disciplina (nome, código, alunosMatriculados)
-  * Métodos: matricularAluno(), gerarBoletim()
-
-  * Classe Escola (nome, listaAlunos, listaProfessores)
-  * Métodos: matricularAluno(), contratarProfessor(), gerarRelatorio()
-
-  * Implemente interações entre todas as classes e um menu básico no console para testar todas as funcionalidades.
-*/
-
-class Escola {
-    constructor(nome) {
+// Declarar as classes 
+class Professor {
+    constructor(nome, departamento) {
         this.nome = nome;
-        this.listaAlunos = [];
-        this.listaProfessores = [];
+        this.departamento = departamento;
+        this.disciplinas = [];
+        this.turmas = []; 
     }
 
-    // Função para matricular o aluno na escola
-    matricularAluno(aluno) {
-        this.listaAlunos.push(aluno);
-    }
-
-    // Função para contratar professores
-    contratarProfessor(professor) {
-        this.listaProfessores.push(professor);
-    }
-
-    // Gerar relatório de alunos matriculados e professores contratados
-    gerarRelatorio() {
-        const alunosMatriculados = Object.keys(this.listaAlunos);
-        if (alunosMatriculados.length > 0) {
-            console.log(`Alunos matriculados em ${this.nome}: ${this.listaAlunos}`);
-            alunosMatriculados.forEach(aluno => console.log(`${aluno}\n)`));
+    // Atribuir uma disciplina
+    atribuirDisciplina(disciplina) {
+        if (!this.disciplinas.includes(disciplina)) {
+            this.disciplinas.push(disciplina);
+            console.log(`Disciplina ${disciplina} atribuída ao professor ${this.nome}.`);
         } else {
-            console.log(`Nenhum aluno matriculado em ${this.nome}.`);
+            console.log(`Professor ${this.nome} já ministra a disciplina ${disciplina}.`);
         }
+    }
 
-        const professoresContratados = Object.keys(this.listaProfessores);
-        if (professoresContratados.length > 0) {
-            console.log(`Professores contratados: ${this.listaProfessores}`);
-            professoresContratados.forEach(professor => console.log(`${professor}\n`));
+    // Listar as disciplinas atribuídas
+    listarDisciplina() {
+        if (this.disciplinas.length > 0) {
+            console.log(`O professor ${this.nome} ministra as seguintes disciplinas:`);
+            this.disciplinas.forEach(disciplina => console.log(`- ${disciplina}`));
         } else {
-            console.log(`Nenhum professor contratado`);
+            console.log(`Professor ${this.nome} ainda não tem disciplinas atribuídas.`);
+        }
+    }
+
+    // Listar as turmas atribuídas
+    listarTurmas() {
+        if (this.turmas.length === 0) {
+            console.log(`${this.nome} ainda não tem turmas atribuídas.`);
+        } else {
+            console.log(`Turmas atribuídas ao professor ${this.nome}:`);
+            this.turmas.forEach((turma, index) => {
+                console.log(`${index + 1}. ${turma}`);
+            });
+        }
+    }
+
+    // Método para atribuir turma 
+    atribuirTurma(turma) {
+        if (!this.turmas.includes(turma)) {
+            this.turmas.push(turma);
+            console.log(`Turma ${turma} atribuída ao professor ${this.nome}.`);
+        } else {
+            console.log(`Professor ${this.nome} já tem a turma ${turma} atribuída.`);
         }
     }
 }
 
-// Teste
+const professor1 = new Professor("Carlos Silva", "Matemática");
+const professor2 = new Professor("joão","fisica");
 
-const escola = new Escola('Rakel Rechuem');
+// Atribuindo disciplinas
+professor1.atribuirDisciplina("Ciências");
+professor1.atribuirDisciplina("Matemática");
+professor2.atribuirDisciplina("ed fisica");
+professor2.atribuirDisciplina("fisica");
 
-matricularAluno('Pedro Costa Cordeiro');
-matricularAluno('Rafael de Oliveira Meira');
-matricularAluno('Victor Hugo Dias de Oliveira');
-matricularAluno('Carlos Gabriel de Barros Felipe');
-contratarProfessor('André Lessa Felipe');
-contratarProfessor('Carlos Rivero');
-contratarProfessor('Vinícius Zanardi');
-gerarRelatorio();
+// Atribuindo turmas
+professor1.atribuirTurma("Turma A - 2009");
+professor1.atribuirTurma("Turma B - 2010");
+professor2.atribuirTurma("turma c - 2011");
+professor2.atribuirTurma("turma d - 2012");
+// Listando disciplinas e turmas
+professor1.listarDisciplina();
+professor1.listarTurmas();
+professor2.listarDisciplina();
+professor2.listarTurmas();
