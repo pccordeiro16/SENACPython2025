@@ -1,0 +1,33 @@
+.hero{
+    height: 30vh;
+    color: black;
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+    text-align: center;
+}
+
+.navbar{
+    display: flex;
+    width: 2000px;
+    height: 200px;
+    background: white;
+}
+
+.navbar-nav{
+    color: #a10716;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #a10716;
+}
+
+.card-body{
+    h5{ height: 68  px;
+
+    }
+}
