@@ -14,10 +14,35 @@
     background: white;
 }
 
-.navbar-nav{
-    color: #a10716;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.nav-item{
+    display: flex;
+    font-family: helvetica;
+    padding-left: 13px;
+}
 
+.nav-link{
+    font-size: 20px;
+    color: #a10716;
+}
+
+h1{
+    color: white;
+    font-family: 'Franklin Gothic Medium';
+}
+
+p{
+    color: white;
+    font-family: 'Franklin Gothic Medium';
+}
+
+h2{
+    color: white;
+    font-family: 'Franklin Gothic Medium';
+}
+
+h3{
+    color: black;
+    font-family: 'Franklin Gothic Medium';
 }
 
 body{
@@ -26,8 +51,12 @@ body{
     background-color: #a10716;
 }
 
+.mb-0{
+    color: black;
+}
+
 .card-body{
-    h5{ height: 68  px;
+    h5{ height: 70 px;
 
     }
 }
