@@ -1,0 +1,16 @@
+body{
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    background-color: #010a57;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    max-width: 1690px;
+    max-height: 1200px;
+    margin: 30px;
+    background-color: rgb(255, 255, 255);
+    padding: 70px;
+    box-shadow: 0 0 15px rgba(0,0,0,0 1);
+    border: 1px solid black;
+}
