@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Mengo Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+<body class="" >
+
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="img-div">
+                    <img style="width: 200px; height: 182px;" src="IMG_4588.PNG" alt="">
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-togglee="collapse" data-bs-target="navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="" id="navbarNav">
+                <ul class="navbar-nav mx-auto d-flex flex-row">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">INÍCIO</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">PRODUTOS</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contato.html">CONTATO</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">LOGIN</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="cadastro.html">CADASTRO</a></li>
+
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div class="container-fluid py-5">
+        <div class="container bg-white w-50 p-5 rounded shadow">
+        <h3 class="mb-4 text-center">Cadastro de Clientes</h3>
+
+        <form action="#" method="post" enctype="application/x-www-form-urlencoded">
+
+            <div class="mb-3">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" id="username" name="username" class="form-control" required placeholder="Digite seu username">
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="text" id="email" name="email" class="form-control" required placeholder="Digite seu email">
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Senha:</label>
+                <input type="password" id="password" name="password" class="form-control" required placeholder="Digite sua senha">
+            </div>
+
+            <div class="mb-3">
+                <label for="role" class="form-label">Função:</label>
+                <input type="text" id="role" value="ROLE_USER" disabled name="role" class="form-control" required placeholder="Digite sua função">
+            </div>
+
+            <div class="mb-0 text-center" >
+                <label for="genero" class="form-label">Gênero</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="genero" id="masc" value="masculino">
+                    <label for="masc" form-check-label>Masculino</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="genero" id="fem" value="feminino">
+                    <label for="fem" form-check-label>Feminino</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="genero" id="outro" value="outro">
+                    <label for="outro" form-check-label>Outro</label>
+                </div>
+            </div>
+
+                <div class="mb-3">
+                    <label for="estado" class="form-label">
+                    </label>
+                    <select name="estado" id="estado" class="form-select">
+                        <option selected disabled>Selecione seu estado</option>
+                        <option value="sp">São Paulo</option>
+                        <option value="rj">Rio de Janeiro</option>
+                        <option value="mg">Minas Gerais</option>
+                        <option value="es">Espírito Santo</option>
+                        <option value="ba">Bahia</option>
+                        <option value="rs">Rio Grande do Sul</option>
+                        <option value="sc">Santa Catarina</option>
+                        <option value="am">Amazonas</option>
+                        <option value="mt">Mato Grosso</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Preferências:</label>
+                    <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="ofertas" name="preferencias[]" value="ofertas">
+                    <label for="ofertas" class="form-check-label">Receber ofertas por e-mail</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="novidades" name="preferencias[]" value="novidades">
+                    <label for="novidades" class="form-check-label">Receber novidades da loja</label>
+                </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="cor" class="form-label">Cor favorita:</label>
+                    <input type="color" id="cor" class="form-control form-control-color">
+                </div>
+                <div class="mb-3">
+                    <label for="foto" class="form-label">Foto de Perfil:</label>
+                    <input type="file" id="foto" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="descrico" class="form-label">Sobre você:</label>
+                    <textarea name="descricao" class="form-control" id="descricao" placeholder="Fale um pouco sobre você" rows="3"></textarea>
+                </div>
+
+                <div class="d-flex justify-content-end">
+                    <button type="reset" class="btn btn-secondary">Limpar</button>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+    
+                </div>
+
+
+                </div>
+
+
+
+            
+        </form> 
+         </div> 
+    </div>  
+
+    <footer class="bg-white text-white text-center py-4 mt-5">
+        <p class="mb-0"> Mengo Store. Todos os direitos reservados.</p>
+        </footer>  
+
+    <script>
+        function enviarCadastro(event){
+            event.preventDefault();
+
+            const dados = {
+
+                username: document.getElementById('username').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value,
+                role: document.getElementById('role').value,
+
+            };
+
+            console.log(dados);
+        }
+
+        document.querySelector('form').addEventListener('submit', enviarCadastro);
+    </script>
+    
+</body>
+</html>

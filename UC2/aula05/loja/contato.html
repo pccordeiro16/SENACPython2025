@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Mengo Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="">
+
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="img-div">
+                    <img style="width: 200px; height: 182px;" src="IMG_4588.PNG" alt="">
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-togglee="collapse" data-bs-target="navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="" id="navbarNav">
+                <ul class="navbar-nav mx-auto d-flex flex-row">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">INÍCIO</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">PRODUTOS</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contato.html">CONTATO</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">LOGIN</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="cadastro.html">CADASTRO</a></li>
+
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div class="container-fluid py-5">
+        <div class="container bg-white w-50 p-5 rounded shadow">
+        <h3 class="mb-4 text-center">Contato - Mengo Store</h3>
+
+        <form action="#" method="post" enctype="application/x-www-form-urlencoded">
+
+            <div class="mb-3">
+                <label for="contato" class="form-label">Como podemos te ajudar?</label>
+                <input type="text" id="contato" name="contato" class="form-control" required placeholder="Digite o que quiser">
+            </div>
+
+            <div class="mb-3" >
+                <label for="genero" class="form-label">Gênero:</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="genero" id="masc" value="masculino">
+                    <label for="masc" form-check-label>Masculino</label>
+                </div>
+        
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="genero" id="fem" value="feminino">
+                    <label for="fem" form-check-label>Feminino</label>
+                </div>
+        
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="genero" id="outro" value="outro">
+                    <label for="outro" form-check-label>Outro</label>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="estado" class="form-label">
+                        Estado:
+                    </label>
+                    <select name="estado" id="estado" class="form-select">
+                        <option selected disabled>Selecione seu estado</option>
+                        <option value="sp">São Paulo</option>
+                        <option value="rj">Rio de Janeiro</option>
+                        <option value="mg">Minas Gerais</option>
+                        <option value="es">Espírito Santo</option>
+                        <option value="ba">Bahia</option>
+                        <option value="rs">Rio Grande do Sul</option>
+                        <option value="sc">Santa Catarina</option>
+                        <option value="am">Amazonas</option>
+                        <option value="mt">Mato Grosso</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+    
+    </div>
+
+    <footer class="bg-white text-white text-center py-4 mt-5">
+        <p class="mb-0"> Mengo Store. Todos os direitos reservados.</p>
+        </footer> 
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+.hero{
+    height: 30vh;
+    color: black;
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+    text-align: center;
+}
+
+.navbar{
+    background: white;
+}
+
+.display-3{
+    padding-top: 18px;
+}
+
+
+.btn-primary{
+    color: white;
+    background-color: #a10716;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-tap-highlight-color: #a10716;
+    border-color: #a10716;
+}
+
+
+.btn-primary:hover {
+    color: #a10716;
+    background-color: white;
+    border-color: #a10716;
+}
+
+
+.nav-item{
+    display: flex;
+    font-family: helvetica;
+    padding-left: 13px;
+}
+
+.nav-link{
+    font-size: 20px;
+    color: #a10716;
+}
+
+h1{
+    color: white;
+    font-family: 'Franklin Gothic Medium';
+}
+
+p{
+    color: white;
+    font-family: 'Franklin Gothic Medium';
+}
+
+h2{
+    color: white;
+    font-family: 'Franklin Gothic Medium';
+}
+
+h3{
+    color: black;
+    font-family: 'Franklin Gothic Medium';
+}
+
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #a10716;
+}
+
+.form-label{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+.mb-0{
+    color: black;
+}
+
+.card-body{
+    h5{ height: 70 px;
+
+    }
+}
+
+.text-primary{
+    color: #a10716 !important;
+    margin-top: 1rem;
+}
+
+.card-text{
+    color: black;
+    opacity: 35%;
+    font-family: arial;
+    margin-bottom: 0;
+}
+
+.btn-outline-primary{
+    color: #a10716;
+    background-color: white;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-tap-highlight-color: #a10716;
+    border-color: #a10716;
+}
+
+.btn-outline-primary:hover{
+    color: #fff;
+    background-color: #a10716;
+    border-color: #ffffff;
+}
