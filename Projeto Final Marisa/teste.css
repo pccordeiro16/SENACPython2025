@@ -1,0 +1,269 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(245, 245, 245);
+}
+
+.navbar-section {
+    .navbar {
+        margin-bottom: 0px;
+        background-color: #ec008c;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: flex;
+        flex-basis: auto;
+        justify-content: space-around;
+    }
+
+    .nav-link{
+        display: flex;
+    }
+
+    .navbar {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex
+    ;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: .5rem 1rem;
+    }
+
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+
+    nav {
+        display: block;
+        unicode-bidi: isolate;
+    }
+}
+
+.social-section{
+    main {
+        padding: 0px;
+    }
+
+    header {
+        background-color: black;
+        padding: 2px;
+        color: white;
+        font-family: Arial Narrow, sans-serif;
+    }
+
+    .contact-info {
+        margin-top: 5px;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+    }
+
+    .icon {
+        text-decoration: none;
+        font-size: 2rem;
+        color: #555;
+        transition: transform 0.3s, color 0.3s;
+    }
+
+    .icon:hover {
+        transform: scale(1.2);
+        color: #ec008c;
+    }
+
+    .facebook { color: #ffffff; }
+    .twitter { color: #ffffff; }
+    .instagram { color: #ffffff; }
+    .email { color: #ffffff; }
+}
+
+.carrossel-section {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+    background: #f0f0f0;
+
+    .carrossel {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        height: 847px;
+    }
+
+    .imagens {
+        display: flex;
+        width: 300vw;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .imagens img {
+        width: 100vw;
+        height: 100%;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    .nav {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+    }
+
+    .nav label {
+        cursor: pointer;
+        width: 12px;
+        height: 12px;
+        background: #fff;
+        border-radius: 50%;
+        border: 2px solid #333;
+        opacity: 0.6;
+    }
+
+    input#img1:checked ~ .imagens {
+        transform: translateX(0%);
+    }
+
+    input#img2:checked ~ .imagens {
+        transform: translateX(-100vw);
+    }
+
+    input#img3:checked ~ .imagens {
+        transform: translateX(-200vw);
+    }
+
+    input:checked + .nav label[for="img1"],
+    input:checked + .nav label[for="img2"],
+    input:checked + .nav label[for="img3"] {
+        background: #333;
+    }
+}
+
+.hero{
+    height: 15vh;
+    color: black;
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+h6 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.display-3{
+    font-size: 4rem;
+    padding: 0px;
+}
+
+h1{
+    padding: 0;
+    margin-top: 0px;
+    color: black;
+    font-family: 'Franklin Gothic Medium';
+}
+
+.lead{
+    color: black;
+    font-family: 'Lucida Sans';
+    font-weight: bolder;
+}
+
+.mb-4{
+    margin-top: 43px;
+}
+
+h2{
+    color: black;
+    font-family: 'Lucida Sans';
+}
+
+.btn-primary{
+    color: white;
+    font-family: 'Franklin Gothic Medium';
+    font-size: 19px;
+    background-color: #ec008c;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-tap-highlight-color: #ec008c;
+    border-color: #ec008c;
+    margin: 0;
+}
+
+.btn-primary:hover {
+    color: black;
+    background-color: #ec008c;
+    border-color: #ffffff;
+    transform: scale(1.1);
+    transition: transform 0.7s, color 0.2s;
+}
+
+h3{
+    color: black;
+    font-family: 'Franklin Gothic Medium';
+}
+
+.card-body{
+    h5{height: 35px;}
+}
+
+.text-primary{
+    color: #ec008c !important;
+    margin-top: 0px;
+    font-size: 28px;
+}
+
+.card-text{
+    color: black;
+    opacity: 35%;
+    font-family: arial;
+    margin-top: 1rem;
+}
+
+.btn-outline-primary{
+    color: #ec008c;
+    background-color: white;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-tap-highlight-color: #ec008c;
+    border-color: #ec008c;
+}
+
+.btn-outline-primary:hover{
+    color: #fff;
+    background-color: #ec008c;
+    border-color: #ffffff;
+    transform: scale(1.05);
+    transition: transform 0.1s;
+}
+
+.mb-0{
+    color: white;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    font-size: 1.0rem;
+}

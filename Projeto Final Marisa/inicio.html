@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lojas Marisa</title>
+    <link rel="icon" type="image/x-icon" href="download.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="inicio.css">
+</head>
+<body>
+    <section class="navbar-section">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar product-card" href="inicio.html">
+            <div class="logo-container">
+                <img class="logo logo-branca" src="marisabranco.png" alt="Logo branca">
+                <img class="logo logo-rosa" src="Logo-marisa.svg.png" alt="Logo rosa">
+            </div>
+          </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="collapse navbar-collapse" id="navbarsExample07">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="inicio.html">Início <span class="sr-only">(atual)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Produtos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Cadastro</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown07">
+                  <a class="dropdown-item" href="#">Feminino</a>
+                  <a class="dropdown-item" href="#">Masculino</a>
+                  <a class="dropdown-item" href="#">Calçados</a>
+                  <a class="dropdown-item" href="#">Lingerie</a>
+                  <a class="dropdown-item" href="#">Jeans</a>
+                  <a class="dropdown-item" href="#">Infantil</a>
+                  <a class="dropdown-item" href="#">Plus Size</a>
+                  <a class="dropdown-item" href="#">Acessórios</a>
+                  <a class="dropdown-item" href="#">Casa</a>
+                  <a class="dropdown-item" href="#">Ofertas</a>
+                </div>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-md-0 search-form">
+              <i class="fas fa-search search-icon"></i>
+              <input class="form-control" type="text" placeholder="Pesquisa" aria-label="Search">
+            </form>
+          </div>
+      </nav>
+    </section>
+
+    <section class="carrossel-section">
+        <div class="carrossel">
+
+            <div class="seta-container esquerda-container">
+              <button class="seta esquerda" onclick="voltar()">&#10094;</button>
+            </div>
+
+            <div class="seta-container direita-container">
+              <button class="seta direita" onclick="avancar()">&#10095;</button>
+            </div>
+
+        <div class="carrossel-overlay-top"></div>
+        <div class="carrossel-overlay"></div>
+    
+          <div class="imagens" id="slider">
+
+            <a class="carrossel product-card" href="https://pesquisa.marisa.com.br/hotsite/show-de-presentes-para-sua-mae">
+              <img src="20250417-HOMEPAGE-ROTATIVO-DESKTOP-BPDP02MAES.gif" alt="Dia das Mães">
+            </a>
+
+
+            <a class="carrossel product-card" href="https://pesquisa.marisa.com.br/hotsite/site-todo-30-off">
+              <img src="20250325-HOMEPAGE-ROTATIVO-DESKTOP-BPDP0130OFF.gif" alt="Alerta Rosa Marisa">
+            </a>
+            <a class="carrossel product-card" href="https://pesquisa.marisa.com.br/hotsite/mais-vendidos-de-inverno">
+              <img src="20250417-HOMEPAGE-ROTATIVO-DESKTOP-BPDP05INFANTIL.gif" alt="Especial Inverno">
+            </a>
+            <a class="carrossel product-card" href="https://pesquisa.marisa.com.br/hotsite/conjuntos-e-casacos-quentinhos-infantil">
+              <img src="20250424-HOMEPAGE-ROTATIVO-DESKTOP-BPDP05INFANTIL.gif" alt="Infantil Casacos e Conjuntos">
+            </a>
+            <a class="carrossel product-card" href="https://pesquisa.marisa.com.br/hotsite/show-de-presentes-para-sua-mae">
+              <img src="20250417-HOMEPAGE-ROTATIVO-DESKTOP-BPDP02MAES.gif" alt="Dia das Mães">
+            </a>
+
+
+            <a class="carrossel product-card" href="https://pesquisa.marisa.com.br/hotsite/site-todo-30-off">
+              <img src="20250325-HOMEPAGE-ROTATIVO-DESKTOP-BPDP0130OFF.gif" alt="Alerta Rosa Marisa">
+            </a>
+
+          </div>
+      
+          <div class="nav" id="nav-dots">
+            <span onclick="irParaSlide(1)"></span>
+            <span onclick="irParaSlide(2)"></span>
+            <span onclick="irParaSlide(3)"></span>
+            <span onclick="irParaSlide(4)"></span>
+        </div>
+        </div>
+    </section>
+
+    <section class="social-section">
+        <header>
+        <main>
+            <section class="contact-info text-center">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/voudemarisa/" target="_blank" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/voudemarisa" target="_blank" class="icon twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/voudemarisa/" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:encarregado.dados@marisa.com.br" class="icon email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </section>
+        </main>
+        </header>
+    </section>
+
+    <section class="categoria-section">
+      <h2 class="text-center mb-1">Categorias</h2>
+      <div class="container">
+        <div class="d-flex v-center h-space-between nav-categoria-bloco1">
+
+          <div class="col-4 col-sm-3 col-md-1  mb-1">
+            <a href="https://www.marisa.com.br/feminino/c/roupas" class="categoria-link">
+              <img src="https://images2.marisa.com.br/medias/sys_master/images/images/hed/h99/16711194837022/20250417-HOMEPAGE-BLOCO1-DESKTOP-P02-FEMININO.gif" alt="Feminino" class="categoria-img">
+              <p class="categoria-nome text-center">Feminino</p>
+            </a>
+          </div>
+
+          <div class="col-4 col-sm-3 col-md-1  mb-1">
+            <a href="https://www.marisa.com.br/c/masculino" class="categoria-link">
+              <img src="https://images2.marisa.com.br/medias/sys_master/images/images/hf4/h9e/16711239860254/20250417-HOMEPAGE-BLOCO1-DESKTOP-P08-MASCULINO.gif" alt="Masculino" class="categoria-img">
+              <p class="categoria-nome text-center">Masculino</p>
+            </a>
+          </div>
+
+          <div class="col-4 col-sm-3 col-md-1  mb-1">
+            <a href="https://www.marisa.com.br/feminino/c/calcados" class="categoria-link">
+              <img src="https://images2.marisa.com.br/medias/sys_master/images/images/hf0/hb4/16711195066398/20250417-HOMEPAGE-BLOCO1-DESKTOP-P03-CALCADOS.gif" alt="Calçados" class="categoria-img">
+              <p class="categoria-nome text-center">Calçados</p>
+            </a>
+          </div>
+
+          <div class="col-4 col-sm-3 col-md-1  mb-1">
+            <a href="https://www.marisa.com.br/feminino/c/lingerie" class="categoria-link">
+              <img src="https://images2.marisa.com.br/medias/sys_master/images/images/h08/hc4/16711195328542/20250417-HOMEPAGE-BLOCO1-DESKTOP-P05-LINGERIE.gif" alt="Lingerie" class="categoria-img">
+              <p class="categoria-nome text-center">Lingerie</p>
+            </a>
+          </div>
+
+          <div class="col-4 col-sm-3 col-md-1  mb-1">
+            <a href="https://www.marisa.com.br/lingerie/feminino/c/pijamas" class="categoria-link">
+              <img src="https://images2.marisa.com.br/medias/sys_master/images/images/h40/haa/16711195459614/20250417-HOMEPAGE-BLOCO1-DESKTOP-P06-PIJAMAS.gif" alt="Pijamas" class="categoria-img">
+              <p class="categoria-nome text-center">Pijamas</p>
+            </a>
+          </div>
+
+          <div class="col-4 col-sm-3 col-md-1  mb-1">
+            <a href="https://www.marisa.com.br/c/infantil" class="categoria-link">
+              <img src="https://images2.marisa.com.br/medias/sys_master/images/images/hc5/h45/16711195230238/20250417-HOMEPAGE-BLOCO1-DESKTOP-P04-INFANTIL.gif" alt="Infantil" class="categoria-img">
+              <p class="categoria-nome text-center">Infantil</p>
+            </a>
+          </div>
+
+          <div class="col-4 col-sm-3 col-md-1  mb-1">
+            <a href="https://www.marisa.com.br/feminino/c/plus-size" class="categoria-link">
+              <img src="https://images2.marisa.com.br/medias/sys_master/images/images/h89/hee/16711239532574/20250417-HOMEPAGE-BLOCO1-DESKTOP-P07-PLUS.gif" alt="Plus Size" class="categoria-img">
+              <p class="categoria-nome text-center">Plus Size</p>
+            </a>
+          </div>
+
+          <div class="col-4 col-sm-3 col-md-1  mb-1">
+            <a href="https://www.marisa.com.br/feminino/c/acessorios" class="categoria-link">
+              <img src="https://images2.marisa.com.br/medias/sys_master/images/images/hd9/h49/16711270400030/20250417-HOMEPAGE-BLOCO1-DESKTOP-P09-ACESSORIOS.gif" alt="Acessórios" class="categoria-img">
+              <p class="categoria-nome text-center">Acessórios</p>
+            </a>
+          </div>
+
+          <div class="col-4 col-sm-3 col-md-1  mb-1">
+            <a href="https://www.marisa.com.br/c/casa" class="categoria-link">
+              <img src="https://images2.marisa.com.br/medias/sys_master/images/images/h3c/h9a/16711270596638/20250417-HOMEPAGE-BLOCO1-DESKTOP-P10-CASA.gif" alt="Casa" class="categoria-img">
+              <p class="categoria-nome text-center">Casa</p>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>  
+
+    <section class="products py-0">
+    <div class="container">
+        <h2 class="destaque mb-4">Produtos em Destaque</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card product-card">
+                  <a href="https://www.marisa.com.br/jaqueta-masculina-bomber-bolsos-mr-preto/p/10056819335?siteName=Marisa">
+                    <img src="https://images2.marisa.com.br/medias/sys_master/images/images/ha4/h2c/16658624643102/JAQUETA-NYLON-PRETO-PTO-M-10056821451-C1.jpg" class="card-img-top" alt="Jaqueta">
+                    <div class="card-overlay">
+                      <h5 class="card-title">Jaqueta Masculina Bomber Bolsos MR</h5>
+                      <p class="card-text">De: <span class="de-preco">R$149,99</span></p>
+                      <p class="card-price">Por R$ 104,99</p>
+                      <div class="botao-wrapper">
+                        <button class="btn btn-outline-primary w-100">Comprar</button>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            <div class="col-md-4">
+                <div class="card product-card">
+                  <a href="https://www.marisa.com.br/jaqueta-masculina-puff-bolsos-mr-preto/p/10056830460?siteName=Marisa">
+                    <img src="https://images2.marisa.com.br/medias/sys_master/images/images/h53/h64/16586922885150/Jaqueta-Masculina-Puff-Bolsos-MR-10056843330-C1.jpg" class="card-img-top" alt="">
+                    <div class="card-overlay">
+                      <h5 class="card-title">Jaqueta Masculina Puff Bolsos MR</h5>
+                      <p class="card-text">De: <span class="de-preco">R$159,99</span></p>
+                      <p class="card-price">Por R$ 111,99</p>
+                      <div class="botao-wrapper">
+                        <button class="btn btn-outline-primary w-100">Comprar</button>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            <div class="col-md-4">
+                <div class="card product-card">
+                  <a href="https://www.marisa.com.br/jaqueta-feminina-puffer-vi%c3%a9s-bolsos-marisa-bege/p/10056907780?siteName=Marisa">
+                    <img src="https://images2.marisa.com.br/medias/sys_master/images/images/hd2/h31/16660898381854/Jaqueta-Matelasse-Bicolor-COR-2-BEE-P-10056913811-C1.jpg" class="card-img-top" alt="">
+                    <div class="card-overlay">
+                      <h5 class="card-title">Jaqueta Feminina Puffer Viés Bolsos Marisa</h5>
+                      <p class="card-text">De: <span class="de-preco">R$189,99</span></p>
+                      <p class="card-price">Por R$ 132,99</p>
+                      <div class="botao-wrapper">
+                        <button class="btn btn-outline-primary w-100">Comprar</button>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="hero">
+      <div class="container">
+        <a href="#" target="_blank" class="btn btn-primary btn-ig">MAIS OFERTAS</a>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4 mt-2">
+    <p class="direitos"> Lojas Marisa. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+
+      // Carrossel //
+
+      const slider = document.getElementById('slider');
+      const dots = document.querySelectorAll('#nav-dots span');
+      const totalSlides = 4
+      let index = 1;
+      let allowTransition = true
+
+      // posiciona no primeiro slide
+      slider.style.transform = `translateX(-${index * 100}vw)`;
+
+      function updateSlider() {
+        slider.style.transition = 'transform 0.5 ease-in-out';
+        slider.style.transform = `translateX(-${index * 100}vw)`;
+        updateDots();
+      }
+
+      function updateDots() {
+        dots.forEach(dot => dot.classList.remove('ativo'));
+        const dotIndex = (index - 1 + totalSlides) % totalSlides;
+        dots[dotIndex].classList.add('ativo');
+      }
+      
+      // avancar manualmente
+      function avancar() {
+        if (!allowTransition) return;
+        index++;
+        updateSlider();
+        allowTransition = false;
+
+        setTimeout(() => {
+          if (index === totalSlides + 1) {
+            slider.style.transition = 'none';
+            index = 1;
+            slider.style.transform = `translateX(-${index * 100}vw)`;
+
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                slider.style.transition = 'transform 0.5 ease-in-out'
+              });
+            });
+          }
+          allowTransition = true;
+        }, 600);
+      }
+
+      function voltar() {
+        if (!allowTransition) return;
+        index--;
+        updateSlider();
+        allowTransition = false
+        
+        setTimeout(() => {
+          if (index === 0) {
+            slider.style.transition = 'none';
+            index = totalSlides;
+            slider.style.transform = `translateX(-${index * 100}vw)`;
+
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                slider.style.transition = 'transform 0.5 ease-in-out'
+              });
+            });
+          }
+          allowTransition = true;
+        }, 600);
+      }
+
+      function irParaSlide(num) {
+        index = num;
+        updateSlider();
+      }
+
+      // avancar automaticamente
+      setInterval(avancar, 8000)
+
+    </script>
+
+</body>
