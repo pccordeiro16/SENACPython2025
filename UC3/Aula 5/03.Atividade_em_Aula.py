@@ -29,7 +29,7 @@ class LivroDigital(Livro):
         self.link_download = link_download
 
     def __str__(self):
-        return f'| {self.titulo} (Digital - {self.formato}) | Download: {self.link_download} |'
+        return f'| {self.titulo} ({self.autor} - {self.ano}) | {self.formato} | Download: {self.link_download} |'
     
 class Usuario:
     def __init__(self, id, nome, cpf):
@@ -51,7 +51,7 @@ class Emprestimo:
         self.hora = datetime.now().strftime('%H:%M')
 
     def __str__(self):
-        return f'--- {self.usuario.nome} pegou o livro "{self.livro.titulo}" no dia {self.data}, às {self.hora}.\n'
+        return f'--- {self.usuario.nome} pegou o livro "{self.livro.titulo}" emprestado no dia {self.data}, às {self.hora}.\n--- Tempo de devolução em até 2 semanas.\n'
     
 class Biblioteca:
     def __init__(self):
@@ -87,15 +87,22 @@ book2 = Livro('Dom Casmurro', 'Machado de Assis', 1900)
 mlib.cadastrarLivro(book1)
 mlib.cadastrarLivro(book2)
 
+ebook1 = LivroDigital('Harry Potter e a Pedra Filosofal', 'J. K. Rowling', 2015, 'Kindle', 'https://www.amazon.com.br/Harry-Potter-Pedra-Filosofal-S%C3%A9rie-ebook/dp/B01LQM96G4/ref=sr_1_2?adgrpid=129574285169&dib=eyJ2IjoiMSJ9.2jzMVtoHGst2x0cU03-N7ZBnAtK7EDkDVbVxSZ_nZ5be_N3WOyxjQ7oW5vLz6bAaaKVlD3kuqg7awCg_KJmmwDICeaa2Om5OB7hhXpgDGbjpoCSUesHEjucp5M8O3gRPkmwyiSl2PovFuMa_LxDmozqbgdA657OnArkWRljoBTqiXQDHmxcYFS4wsrcBUX7U3W0AiuU-RmjN_jH-jImbANrC7oZAlsX-619c0NSAdYnFfxrkQt3o0o8pAd_M1KxN0MHsGRvl5HZXOiX3P5NU60Qm-KkvE6waSu_2_gmS_DM.KDoMER42PpwjUh747GY_LJc9wZGdJzKktvfBi2ZhEC0&dib_tag=se&hvadid=543989268704&hvdev=c&hvlocphy=9199083&hvnetw=g&hvqmt=e&hvrand=594055647846698852&hvtargid=kwd-301718370855&hydadcr=29709_11803076&keywords=harry+potter+kindle&qid=1746826051&sr=8-2')
+mlib.cadastrarLivro(ebook1)
+
 user1 = Usuario(900, 'Joaquim da Silva', 12345678901)
 user2 = Usuario(901, 'Kaio Vianna', 97865432110)
+user3 = Usuario(902, 'Rodrigo Zin', 80892934355)
 mlib.cadastrarUsuario(user1)
 mlib.cadastrarUsuario(user2)
+mlib.cadastrarUsuario(user3)
 
 emp1 = Emprestimo(book1, user1)
 emp2 = Emprestimo(book2, user2)
+emp3 = Emprestimo(ebook1, user3)
 mlib.emprestarLivro(emp1)
 mlib.emprestarLivro(emp2)
+mlib.emprestarLivro(emp3)
 
 print('Livros:\n')
 mlib.listarLivros()
