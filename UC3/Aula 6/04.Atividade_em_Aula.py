@@ -78,10 +78,9 @@ class Animal(ABC):
         self.especie = especie
         self.alimento = alimento
         self.grunhido = grunhido
-        self.animais = []
 
     def __str__(self):
-        return f'{self.nome} é um {self.especie} {self.sexo} da raça {self.raca}. Se alimento de {self.alimento} e faz: {self.grunhido}!'
+        return f'--- {self.nome} é um {self.especie} {self.sexo} da raça {self.raca}. Come {self.alimento} e faz "{self.grunhido}"!\n'
 
     @abstractmethod
     def grunhir(self):
@@ -94,13 +93,6 @@ class Animal(ABC):
     @abstractmethod
     def dormir(self):
         pass
-
-    def novoAnimal(self, animal):
-        self.animais.append(animal)
-
-    def descreverAnimal(self):
-        for animal in self.animais:
-            print(animal)
 
 
 class Cachorro(Animal):
@@ -110,16 +102,16 @@ class Cachorro(Animal):
         self.sexo = sexo
 
     def grunhir(self):
-        print(f'{self.nome}: {self.grunhido.title()}')
+        print(f'- {self.nome}: {self.grunhido.title()}!\n')
 
     def comer(self):
-        print(f'{self.nome} está comendo {self.alimento}.')
+        print(f'- {self.nome} está comendo {self.alimento}.\n')
 
     def dormir(self):
-        print(f'{self.nome} foi dormir.')
+        print(f'- {self.nome} foi dormir.\n')
 
     def buscar_bola(self):
-        print(f'{self.nome} foi correndo buscar a bola!')
+        print(f'- {self.nome} foi correndo buscar a bola!')
 
 
 class Gato(Animal):
@@ -129,32 +121,71 @@ class Gato(Animal):
         self.sexo = sexo
 
     def grunhir(self):
-        print(f'{self.nome}: {self.grunhido.title()}!')
+        print(f'- {self.nome}: {self.grunhido.title()}!\n')
 
     def comer(self):
-        print(f'{self.nome} está comendo {self.alimento}.')
+        print(f'- {self.nome} está comendo {self.alimento}.\n')
 
     def dormir(self):
-        print(f'{self.nome} foi tirar uma soneca.')
+        print(f'- {self.nome} foi tirar uma soneca.\n')
 
     def arranhar(self):
-        print(f'{self.nome} está arranhando o sofá!')
-
+        print(f'- {self.nome} está arranhando o sofá!')
 
 # Testando
+
 dog1 = Cachorro('Zozo', 'cachorro', 'ração', 'au au', 'Shih Tzu', 'fêmea')
 cat1 = Gato('Tom', "gato", "sachê", "miau", "Azul Russo", "macho")
 
-dog1.descreverAnimal()
+print(dog1)
+print(cat1)
+
+print('\n----------------------------------------------------------------------\n')
 
 dog1.grunhir()
 dog1.comer()
 dog1.dormir()
 dog1.buscar_bola()
 
-print('---')
+print('\n----------------------------------------------------------------------\n')
 
 cat1.grunhir()
 cat1.comer()
 cat1.dormir()
 cat1.arranhar()
+
+# 3
+
+class UsuarioRepository:
+    def __init__(self):
+        self.usuarios = []
+
+    def cadastrar(self, usuario):
+        self.usuarios.append(usuario)
+
+    def listar_todos(self):
+        return self.usuarios
+
+    def buscar_por_email(self, email):
+        for usuario in self.usuarios:
+            if usuario["email"] == email:
+                return usuario
+        return None
+
+    def remover(self, email):
+        self.usuarios = [u for u in self.usuarios if u["email"] != email]
+
+    def atualizar(self, usuario):
+        for i, u in enumerate(self.usuarios):
+            if u["email"] == usuario["email"]:
+                self.usuarios[i] = usuario
+                break
+
+    def listar_por_nome(self, nome):
+        return [u for u in self.usuarios if u["nome"] == nome]
+
+    def listar_por_email(self, email):
+        return [u for u in self.usuarios if u["email"] == email]
+
+    def listar_por_nome_e_email(self, nome, email):
+        return [u for u in self.usuarios if u["nome"] == nome and u["email"] == email]
