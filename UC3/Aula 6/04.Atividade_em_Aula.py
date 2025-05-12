@@ -70,11 +70,91 @@ print(user1.nome)
 
 #2
 
-class Animal:
-    def __init__(self, especie, alimento, grunhido):
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    def __init__(self, nome, especie, alimento, grunhido):
+        self.nome = nome
         self.especie = especie
         self.alimento = alimento
         self.grunhido = grunhido
-    
+        self.animais = []
+
     def __str__(self):
-        return f'O animal {self.especie}'
+        return f'{self.nome} é um {self.especie} {self.sexo} da raça {self.raca}. Se alimento de {self.alimento} e faz: {self.grunhido}!'
+
+    @abstractmethod
+    def grunhir(self):
+        pass
+
+    @abstractmethod
+    def comer(self):
+        pass
+
+    @abstractmethod
+    def dormir(self):
+        pass
+
+    def novoAnimal(self, animal):
+        self.animais.append(animal)
+
+    def descreverAnimal(self):
+        for animal in self.animais:
+            print(animal)
+
+
+class Cachorro(Animal):
+    def __init__(self, nome, especie, alimento, grunhido, raca, sexo):
+        super().__init__(nome, especie, alimento, grunhido)
+        self.raca = raca
+        self.sexo = sexo
+
+    def grunhir(self):
+        print(f'{self.nome}: {self.grunhido.title()}')
+
+    def comer(self):
+        print(f'{self.nome} está comendo {self.alimento}.')
+
+    def dormir(self):
+        print(f'{self.nome} foi dormir.')
+
+    def buscar_bola(self):
+        print(f'{self.nome} foi correndo buscar a bola!')
+
+
+class Gato(Animal):
+    def __init__(self, nome, especie, alimento, grunhido, raca, sexo):
+        super().__init__(nome, especie, alimento, grunhido)
+        self.raca = raca
+        self.sexo = sexo
+
+    def grunhir(self):
+        print(f'{self.nome}: {self.grunhido.title()}!')
+
+    def comer(self):
+        print(f'{self.nome} está comendo {self.alimento}.')
+
+    def dormir(self):
+        print(f'{self.nome} foi tirar uma soneca.')
+
+    def arranhar(self):
+        print(f'{self.nome} está arranhando o sofá!')
+
+
+# Testando
+dog1 = Cachorro('Zozo', 'cachorro', 'ração', 'au au', 'Shih Tzu', 'fêmea')
+cat1 = Gato('Tom', "gato", "sachê", "miau", "Azul Russo", "macho")
+
+dog1.descreverAnimal()
+
+dog1.grunhir()
+dog1.comer()
+dog1.dormir()
+dog1.buscar_bola()
+
+print('---')
+
+cat1.grunhir()
+cat1.comer()
+cat1.dormir()
+cat1.arranhar()
