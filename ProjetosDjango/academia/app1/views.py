@@ -1,100 +1,46 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Produto, UserProfile
+from django.conf import settings
+from .forms import ProdutoForm, ProfileForm
+import os
 
 def home(request):
-    html = """
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <title>Academia X - Início</title>
-        <style>
-            body { font-family: Arial; margin: 0; padding: 0; background: #e0f7fa; color: #333; }
-            header, footer { background: #00796b; color: white; padding: 20px; text-align: center; }
-            nav { background: #004d40; padding: 10px; text-align: center; }
-            nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-            section { padding: 30px; text-align: center; }
-        </style>
-    </head>
-    <body>
-        <header><h1>Academia X</h1></header>
-        <nav>
-            <a href="/">Início</a>
-            <a href="/planos/">Planos</a>
-            <a href="/contato/">Contato</a>
-        </nav>
-        <section>
-            <h2>Bem-vindo à nossa academia!</h2>
-            <p>Fica forte ou fica fraco, você escolhe 💪</p>
-        </section>
-        <footer>© 2025 Academia X - Todos os direitos reservados.</footer>
-    </body>
-    </html>
-    """
-    return HttpResponse(html)
+    return render(request, 'app1/home.html')
 
-def planos(request):
-    html = """
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <title>Academia X - Planos</title>
-        <style>
-            body { font-family: Arial; margin: 0; padding: 0; background: #fff3e0; color: #333; }
-            header, footer { background: #f57c00; color: white; padding: 20px; text-align: center; }
-            nav { background: #ef6c00; padding: 10px; text-align: center; }
-            nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-            section { padding: 30px; text-align: center; }
-        </style>
-    </head>
-    <body>
-        <header><h1>Nossos Planos 🏋️</h1></header>
-        <nav>
-            <a href="/">Início</a>
-            <a href="/planos/">Planos</a>
-            <a href="/contato/">Contato</a>
-        </nav>
-        <section>
-            <h2>Planos a partir de R$49,90</h2>
-            <p>Inclui musculação, funcional, aeróbico e muito mais!</p>
-        </section>
-        <footer>© 2025 Academia X - Todos os direitos reservados.</footer>
-    </body>
-    </html>
-    """
-    return HttpResponse(html)
+def produtos(request):
+    produtos = Produto.objects.filter(disponivel=True)
+    return render(request, 'app1/produtos.html', {'produtos': produtos})
 
-def contato(request):
-    html = """
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <title>Academia X - Contato</title>
-        <style>
-            body { font-family: Arial; margin: 0; padding: 0; background: #ede7f6; color: #333; }
-            header, footer { background: #512da8; color: white; padding: 20px; text-align: center; }
-            nav { background: #673ab7; padding: 10px; text-align: center; }
-            nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-            section { padding: 30px; text-align: center; }
-        </style>
-    </head>
-    <body>
-        <header><h1>Fale com a gente 📞</h1></header>
-        <nav>
-            <a href="/">Início</a>
-            <a href="/planos/">Planos</a>
-            <a href="/contato/">Contato</a>
-        </nav>
-        <section>
-            <h2>Endereço:</h2>
-            <p>Rua do Bíceps, nº 71, Mesquita - RJ</p>
-            <h2>WhatsApp:</h2>
-            <p>(21) 99999-0000</p>
-        </section>
-        <footer>© 2025 Academia X - Todos os direitos reservados.</footer>
-    </body>
-    </html>
+def contatos(request):
+    return render(request, 'app1/contatos.html')
+
+
+def list_profile_pics(request):
     """
-    return HttpResponse(html)
+    Lista todas as imagens de perfil usando a OS Library.
+    """
+    pics_path = os.path.join(settings.MEDIA_ROOT, 'profile_pics')
+    pictures = [f for f in os.listdir(pics_path) if f.endswith(('.jpg', '.png'))]
+    return render (request, 'list_pics.html', {'pictures': pictures})
+
+def add_produto(request):
+    if request.method == 'POST':
+        form = ProdutoForm (request.POST, request.FILES)  # Note o request.FILES!
+        if form.is_valid():
+            form.save()
+            return redirect('lista_produtos')
+    else:
+        form = ProdutoForm()
+    return render(request, 'app1/add_produto.html', {'form': form})
+
+def upload_profile(request):
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.user = request.user
+            profile.save()
+            return redirect('home')
+    else:
+        form = ProfileForm()
+    return render(request, 'app1/upload_profile.html', {'form': form})
