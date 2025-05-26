@@ -18,17 +18,17 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <img src="{% static 'app1/img/IMG_5574.png' %}" alt="Logo" width="200">
-                <h1 class="slogan display-4 fw-bold mb-4">Seu shape começa aqui</h1>
+                <h1 class="slogan display-4 fw-bold mb-4 text-black">Seu shape começa aqui!</h1>
                 <p class="lead">
-                    <a href="{% url 'produtos' %}" class="btn btn-primary btn-lg mx-2">Ver Produtos</a>
-                    <a href="{% url 'contatos' %}" class="btn btn-outline-secondary btn-lg mx-2">Contato</a>
+                    <a href="{% url 'produtos' %}" class="redirect">Ver Produtos</a>
+                    <a href="{% url 'contatos' %}" class="redirect">Contato</a>
                 </p>
             </div>
         </div>
     </section>
 
     <section class="destaques mb-5">
-        <h2 class="text-center mb-4">Destaques</h2>
+        <h2 class="destaques text-center mb-4 fw-bold">Destaques</h2>
         <div class="row g-4">
             {% for produto in destaques %}
             <div class="col-md-4">

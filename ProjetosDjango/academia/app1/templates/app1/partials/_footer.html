@@ -1,23 +1,24 @@
 <!-- meuapp/templates/meuapp/partials/_footer.html -->
 {% load static %}
 
-<footer class="bg-dark text-white mt-5">
+<footer class="text-white mt-5 gradient-footer">
     <div class="container py-4">
         <div class="row">
             <!-- Seção About -->
             <div class="col-md-4">
                 <h5>Sobre Nós</h5>
-                <p>TECNOLÓOOOOOOOGYA! </p>
-                <img src="{% static 'app1/img/IMG_5571.png' %}" alt="Logo" width="100">
+                <p>Carregamos o comprometimento com a saúde, bem-estar e qualidade de vida.
+                    Oferecendo estrutura moderna, equipe qualificada e um ambiente motivador para os seus objetivos! </p>
+                <img src="{% static 'app1/img/IMG_5571.png' %}" alt="Logo" width="70">
             </div>
 
             <!-- Links Rápidos -->
             <div class="col-md-4">
                 <h5>Links Úteis</h5>
                 <ul class="list-unstyled">
-                    <li><a href="{% url 'home' %}" class="text-white">Home</a></li>
-                    <li><a href="{% url 'produtos' %}" class="text-white">Produtos</a></li>
-                    <li><a href="#" class="text-white">Política de Privacidade</a></li>
+                    <li><a href="{% url 'home' %}" class="list-item text-white">Home</a></li>
+                    <li><a href="{% url 'produtos' %}" class="list-item text-white">Produtos</a></li>
+                    <li><a href="#" class="list-item text-white">Política de Privacidade</a></li>
                 </ul>
             </div>
 
