@@ -1,0 +1,58 @@
+{% extends 'app1/base.html' %}
+
+{% block title %}Matrícula{% endblock %}
+
+{% block navbar %}
+    {% with header_title="Matricule-se agora!" header_subtitle="Preencha o formulário e venha treinar com a gente!" %}
+        {% include 'appsenac/partials/navbar.html' %}
+    {% endwith %}
+{% endblock %}
+
+{% block content %}
+
+<section class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card matricula-card bg-black text-white shadow p-4">
+                <h2 class="text-center mb-4">Preencha seu cadastro</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome completo</label>
+                        <input type="text" class="form-control" id="nome" name="nome" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="text" class="form-control" id="telefone" name="telefone" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="modalidade" class="form-label">Modalidade de Interesse</label>
+                        <select class="form-control" id="modalidade" name="modalidade" required>
+                            <option value="">Selecione</option>
+                            <option>Musculação</option>
+                            <option>Lutas</option>
+                            <option>Aulas Coletivas</option>
+                            <option>Avaliação Física</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensagem" class="form-label">Mensagem (opcional)</label>
+                        <textarea class="form-control" id="mensagem" name="mensagem" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 btn-contact">Enviar Matrícula</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="planos-section container">
+    <div class="container">
+
+    </div>
+</section>
+{% endblock %}

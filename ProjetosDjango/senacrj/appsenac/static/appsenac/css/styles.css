@@ -1,0 +1,559 @@
+:root {
+  --azul-senac: #003865;
+  --laranja-senac: #f39200;
+  --cinza-claro: #f5f5f5;
+  --branco: #ffffff;
+  --preto: #222222;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: var(--preto);
+  line-height: 1.6;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; 
+}
+
+header {
+    background-color: #003366;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #004F99;
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+.hero-banner {
+    background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url("{% static 'appsenac/img/hero-bg.jpg' %}") no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 120px 0;
+    margin-bottom: 40px;
+}
+
+.hero-banner h2 {
+    font-size: 3.5em; /* Tamanho do título */
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para o texto */
+}
+
+.hero-banner p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilos dos Botões */
+.btn-primary, .btn-secondary, .btn-card {
+    display: inline-block; /* Permite espaçamento e largura */
+    padding: 12px 25px;
+    border-radius: 8px; /* Cantos mais arredondados */
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animações suaves */
+}
+
+.btn-primary {
+    background-color: #FF8C00; /* Amarelo Senac */
+    color: #fff; /* Texto escuro */
+}
+
+.btn-primary:hover {
+    background-color: #FFA500; /* Amarelo mais claro no hover */
+    transform: translateY(-2px); /* Efeito "levitar" */
+}
+
+.btn-secondary {
+    background-color: #003366; /* Verde secundário */
+    color: #fff; /* Texto branco */
+    margin-top: 20px; /* Espaçamento superior */
+}
+
+.btn-secondary:hover {
+    background-color: #004F99; /* Verde mais claro no hover */
+    transform: translateY(-2px);
+}
+
+.btn-card {
+    background-color: #003366; /* Verde escuro */
+    color: #fff;
+    font-size: 0.9em;
+    padding: 10px 20px;
+}
+
+.btn-card:hover {
+    background-color: #004F99;
+    transform: translateY(-2px);
+}
+
+/* --- Estilos da Seção Sobre Nós (Prévia) --- */
+.about-us-preview {
+    padding: 60px 0;
+    background-color: #fff;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+.about-us-preview h3 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #003366;
+    margin-bottom: 50px;
+}
+
+.about-content {
+    display: flex; /* Alinha texto e imagem lado a lado */
+    align-items: center; /* Centraliza verticalmente */
+    gap: 40px; /* Espaço entre os itens */
+}
+
+.about-text {
+    flex: 2; /* Ocupa mais espaço */
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.about-image {
+    flex: 1; /* Ocupa menos espaço */
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%; /* Garante que a imagem se ajuste */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Estilos da Seção de Cursos em Destaque --- */
+.featured-courses {
+    padding: 60px 0;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.featured-courses h3 {
+    font-size: 2.5em;
+    color: #003366;
+    margin-bottom: 50px;
+}
+
+.course-cards {
+    display: flex; /* Alinha os cartões lado a lado */
+    justify-content: center; /* Centraliza os cartões */
+    flex-wrap: wrap; /* Permite que os cartões quebrem a linha */
+    gap: 30px; /* Espaço entre os cartões */
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: calc(33% - 30px); /* Aproximadamente 3 cartões por linha, considerando o gap */
+    min-width: 280px; /* Largura mínima para o cartão */
+    overflow: hidden; /* Garante que a imagem não vaze */
+    text-align: left; /* Alinha texto à esquerda dentro do cartão */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px); /* Efeito de "levitar" mais acentuado */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra mais forte */
+}
+
+.card img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens */
+    object-fit: cover; /* Recorta a imagem para cobrir a área */
+    border-bottom: 1px solid #eee;
+}
+
+.card h4 {
+    color: #004d40;
+    font-size: 1.6em;
+    margin: 20px 20px 10px 20px;
+}
+
+.card p {
+    font-size: 1em;
+    margin: 0 20px 20px 20px;
+    color: #555;
+}
+
+.card .btn-card {
+    margin: 0 20px 20px 20px;
+    display: block; /* O botão ocupa a largura total */
+    text-align: center;
+}
+
+/* --- Estilos da Seção de Depoimentos --- */
+.testimonials {
+    background-color: #E6EEF4; /* Fundo verde claro */
+    padding: 60px 0;
+    text-align: center;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.testimonials h3 {
+    font-size: 2.5em;
+    color: #003366;
+    margin-bottom: 50px;
+}
+
+.testimonial-grid {
+    display: flex; /* Alinha os depoimentos lado a lado */
+    justify-content: center; /* Centraliza */
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.testimonial-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    width: calc(48% - 30px); /* Dois itens por linha */
+    min-width: 300px; /* Largura mínima */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.testimonial-item p {
+    font-style: italic; /* Texto em itálico */
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #444;
+}
+
+.testimonial-item span {
+    font-weight: 600;
+    color: #003366;
+    display: block; /* Garante que o nome fique em nova linha */
+    margin-top: 10px;
+}
+
+/* --- Responsividade (Ajustes para telas menores) --- */
+@media (max-width: 992px) {
+    .about-content {
+        flex-direction: column; /* Em telas menores, imagem e texto ficam em coluna */
+    }
+
+    .about-image {
+        margin-top: 30px;
+    }
+
+    .card {
+        width: calc(48% - 30px); /* 2 cartões por linha */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-banner p {
+        font-size: 1.1em;
+    }
+
+    header nav ul {
+        flex-direction: column; /* Menu em coluna */
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    .card {
+        width: 90%; /* 1 cartão por linha */
+    }
+
+    .testimonial-item {
+        width: 90%; /* 1 depoimento por linha */
+    }
+
+    .about-us-preview h3, .featured-courses h3, .testimonials h3 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-banner h2 {
+        font-size: 2em;
+    }
+
+    .hero-banner p {
+        font-size: 1em;
+    }
+}
+
+
+
+/* --- Estilos para Páginas Internas (Ex: Sobre o Senac) --- */
+
+.page-header {
+    background-color: #004F99; /* Um azul um pouco mais claro que o principal */
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.page-header p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content-section {
+    padding: 50px 0;
+    margin-bottom: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.content-section h2 {
+    font-size: 2.5em;
+    color: #003366; /* Azul Principal */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.content-section .section-description {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #555;
+}
+
+
+/* Seção de História e Missão/Valores (Layout de duas colunas) */
+.history-section .container,
+.mission-values-section .container {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Espaço entre texto e imagem */
+}
+
+/* Inverte a ordem em uma das seções para um layout zig-zag */
+.mission-values-section .container {
+    flex-direction: row-reverse;
+}
+
+.section-text {
+    flex: 2; /* Texto ocupa mais espaço */
+}
+
+.section-image {
+    flex: 1; /* Imagem ocupa menos espaço */
+    text-align: center;
+}
+
+.section-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section-text h3 {
+    color: #FF8C00; /* Laranja para subtítulos */
+    font-size: 1.8em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.section-text p {
+    margin-bottom: 15px;
+    font-size: 1.05em;
+    color: #444;
+}
+
+.section-text ul {
+    list-style: none; /* Remove bullet points padrão */
+    padding: 0;
+    margin-top: 20px;
+}
+
+.section-text ul li {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF8C00'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") no-repeat left center; /* Custom checkmark */
+    background-size: 20px;
+    padding-left: 30px; /* Espaço para o ícone */
+    margin-bottom: 10px;
+    font-size: 1.05em;
+    color: #444;
+}
+.section-text ul li strong {
+    color: #003366; /* Azul para o texto em negrito */
+}
+
+
+/* Seção de Equipe */
+.team-section {
+    text-align: center;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.team-member {
+    background-color: #f0f4f7; /* Fundo azul claro para membros da equipe */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    width: calc(33% - 30px); /* 3 membros por linha */
+    min-width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Imagem redonda */
+    object-fit: cover;
+    border: 3px solid #FF8C00; /* Borda laranja */
+    margin-bottom: 15px;
+}
+
+.team-member h4 {
+    color: #003366; /* Azul Principal */
+    font-size: 1.4em;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    color: #555;
+    font-size: 0.95em;
+}
+
+.centered-button {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* --- Responsividade para a página Sobre o Senac --- */
+@media (max-width: 992px) {
+    .history-section .container,
+    .mission-values-section .container {
+        flex-direction: column; /* Coloca texto e imagem em coluna */
+    }
+
+    .mission-values-section .container {
+        flex-direction: column; /* Garante que em telas menores, o conteúdo seja em coluna */
+    }
+
+    .section-image {
+        margin-top: 30px; /* Espaçamento quando empilhado */
+    }
+
+    .team-member {
+        width: calc(48% - 30px); /* 2 membros por linha */
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2.2em;
+    }
+
+    .page-header p {
+        font-size: 1em;
+    }
+
+    .content-section h2 {
+        font-size: 2em;
+    }
+
+    .section-text h3 {
+        font-size: 1.5em;
+    }
+
+    .team-member {
+        width: 90%; /* 1 membro por linha */
+    }
+}

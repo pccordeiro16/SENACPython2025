@@ -1,0 +1,43 @@
+{% extends 'appsenac/base.html' %}
+
+{% block title %}Nossos Produtos{% endblock %}
+
+{% block navbar %}
+    {% with header_title="Nossos Produtos" header_subtitle="Explore nosso catálogo"  %}
+        {% include 'appsenac/partials/navbar.html' %}
+    {% endwith %}
+{% endblock %}
+
+{% block content %}
+
+<section class="product-section">
+    <h2 class="text-center my-3">Nossos Produtos</h2>
+    <div class="container mt-4">
+        <div class="row">
+            {% for produto in produtos %}
+            <div class="col-md-3 mb-4">
+                <a href="#" class="card-link">
+                <div class="card product-card h-100 shadow-sm">
+                    <div class="bg-black text-white card-body d-flex flex-column">
+                        <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" class="img-fluid mb-3">
+                        <h5 class="card-title">{{ produto.nome }}</h5>
+                        <p class="card-text flex-grow-1">{{ produto.descricao }}</p>
+                        <div class="mt-auto">
+                            <p class="text-white text-success fw-bold mb-2">R$ {{ produto.preco }}</p>
+                            <a href="#" class="btn btn-outline-primary btn-product w-100">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+            {% empty %}
+            <div class="col-12">
+                <div class="alert alert-warning">
+                    Nenhum produto disponível no momento.
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

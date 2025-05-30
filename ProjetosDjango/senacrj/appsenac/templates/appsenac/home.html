@@ -1,0 +1,73 @@
+{% extends 'appsenac/base.html' %}
+
+{% load static %} {# Isso é importante para carregar arquivos estáticos como imagens! #}
+
+{% block title %}Home - Senac RJ{% endblock %}
+
+{% block content %}
+    <section class="hero-banner">
+        <div class="container">
+            <h2>Invista no Seu Futuro com o Senac RJ</h2>
+            <p>Educação profissional de excelência que conecta você ao mercado de trabalho.</p>
+            <a href="#" class="btn-primary">Descubra Nossos Cursos</a>
+        </div>
+    </section>
+
+    <section class="about-us-preview">
+        <div class="container">
+            <h3>Quem Somos</h3>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>O Senac Rio de Janeiro é referência em educação profissional, oferecendo cursos que acompanham as tendências do mercado e preparam você para os desafios do futuro. Com mais de 70 anos de história, nosso compromisso é com a qualidade do ensino e o desenvolvimento de carreiras de sucesso.</p>
+                    <p>Nossa metodologia foca na prática, com laboratórios modernos e professores atuantes no mercado. Venha fazer parte da nossa história de sucesso!</p>
+                    <a href="#" class="btn-secondary">Saiba Mais Sobre o Senac</a>
+                </div>
+                <div class="about-image">
+                    <img src="{% static 'appsenac/img/senac-building.jpg' %}" alt="Fachada do Senac RJ">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-courses">
+        <div class="container">
+            <h3>Nossos Cursos em Destaque</h3>
+            <div class="course-cards">
+                <div class="card">
+                    <img src="{% static 'appsenac/img/curso-ti.jpg' %}" alt="Programação e TI">
+                    <h4>Programação e Desenvolvimento</h4>
+                    <p>Dominando as linguagens mais demandadas do mercado de tecnologia.</p>
+                    <a href="#" class="btn-card">Ver Curso</a>
+                </div>
+                <div class="card">
+                    <img src="{% static 'appsenac/img/curso-gastronomia.jpg' %}" alt="Cozinheiro profissional">
+                    <h4>Gastronomia e Alimentos</h4>
+                    <p>Transforme sua paixão pela culinária em uma profissão de sucesso.</p>
+                    <a href="#" class="btn-card">Ver Curso</a>
+                </div>
+                <div class="card">
+                    <img src="{% static 'appsenac/img/curso-moda.jpg' %}" alt="Design de moda">
+                    <h4>Moda e Design</h4>
+                    <p>Crie, inove e desfile suas ideias no universo da moda.</p>
+                    <a href="#" class="btn-card">Ver Curso</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h3>O Que Nossos Alunos Dizem</h3>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <p>"O Senac me deu as ferramentas e a confiança para mudar de carreira. Hoje sou um desenvolvedor de sucesso!"</p>
+                    <span>- João Silva, ex-aluno de TI</span>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Aprendi técnicas de confeitaria que me permitiram abrir meu próprio negócio. Sou muito grata ao Senac!"</p>
+                    <span>- Maria Santos, ex-aluna de Gastronomia</span>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

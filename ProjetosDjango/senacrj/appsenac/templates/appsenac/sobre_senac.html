@@ -1,0 +1,80 @@
+{% extends 'appsenac/base.html' %}
+
+{% load static %} {# Necessário para carregar imagens e estilos #}
+
+{% block title %}Sobre o Senac RJ{% endblock %}
+
+{% block content %}
+    <section class="page-header">
+        <div class="container">
+            <h1>Sobre o Senac Rio de Janeiro</h1>
+            <p>Conheça nossa história, missão e valores que nos tornam referência em educação profissional.</p>
+        </div>
+    </section>
+
+    <section class="content-section history-section">
+        <div class="container">
+            <div class="section-text">
+                <h2>Nossa História e Legado</h2>
+                <p>O Serviço Nacional de Aprendizagem Comercial (Senac) foi criado em 10 de janeiro de 1946, com o objetivo de promover a educação profissional de trabalhadores e empresários do setor de comércio de bens, serviços e turismo. No Rio de Janeiro, a instituição rapidamente se consolidou como um pilar fundamental no desenvolvimento profissional e social do estado.</p>
+                <p>Ao longo de mais de 70 anos, o Senac RJ tem se adaptado às transformações do mercado, inovando em metodologias e tecnologias para oferecer cursos alinhados às necessidades de empregabilidade. Milhares de profissionais foram formados em diversas áreas, contribuindo diretamente para o crescimento econômico e a melhoria da qualidade de vida dos fluminenses.</p>
+                <p>Nosso legado é construído sobre a base de uma educação de qualidade, que valoriza a prática, a inovação e o compromisso com o futuro.</p>
+            </div>
+            <div class="section-image">
+                <img src="{% static 'appsenac/img/senac-history.jpg' %}" alt="Pessoas estudando em laboratório Senac">
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section mission-values-section">
+        <div class="container">
+            <div class="section-image">
+                <img src="{% static 'appsenac/img/senac-mission.jpg' %}" alt="Equipe do Senac trabalhando juntos">
+            </div>
+            <div class="section-text">
+                <h2>Missão, Visão e Valores</h2>
+                <h3>Nossa Missão</h3>
+                <p>Educar para o trabalho em atividades de comércio de bens, serviços e turismo.</p>
+
+                <h3>Nossa Visão</h3>
+                <p>Ser a instituição brasileira que oferece as melhores soluções em educação profissional, reconhecida pelas empresas e pela sociedade.</p>
+
+                <h3>Nossos Valores</h3>
+                <ul>
+                    <li><strong>Excelência:</strong> Compromisso com a qualidade em tudo o que fazemos.</li>
+                    <li><strong>Inovação:</strong> Busca contínua por novas soluções e metodologias.</li>
+                    <li><strong>Sustentabilidade:</strong> Atuação responsável, considerando impactos sociais e ambientais.</li>
+                    <li><strong>Ética:</strong> Integridade e transparência em todas as relações.</li>
+                    <li><strong>Respeito:</strong> Valorização das pessoas e da diversidade.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section team-section">
+        <div class="container">
+            <h2>Nossa Equipe e Estrutura</h2>
+            <p class="section-description">Contamos com um corpo docente altamente qualificado, formado por profissionais atuantes no mercado, e uma infraestrutura moderna, com laboratórios equipados e tecnologia de ponta para garantir o melhor aprendizado.</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="{% static 'appsenac/img/teacher-1.jpg' %}" alt="Professor do Senac">
+                    <h4>Professor(a) Especialista</h4>
+                    <p>Área de Tecnologia</p>
+                </div>
+                <div class="team-member">
+                    <img src="{% static 'appsenac/img/teacher-2.jpg' %}" alt="Professor do Senac">
+                    <h4>Professor(a) de Gastronomia</h4>
+                    <p>Chefe de Cozinha</p>
+                </div>
+                <div class="team-member">
+                    <img src="{% static 'appsenac/img/staff-1.jpg' %}" alt="Membro da equipe administrativa">
+                    <h4>Coordenador(a) Pedagógico(a)</h4>
+                    <p>Setor de Atendimento</p>
+                </div>
+            </div>
+            <div class="centered-button">
+                <a href="{% url 'contatos' %}" class="btn-primary">Entre em Contato</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
