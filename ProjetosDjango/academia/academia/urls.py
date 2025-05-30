@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from app1.views import home, produtos, contatos
+from app1.views import home, produtos, contatos, matricula, matricula_sucesso
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -27,4 +27,6 @@ urlpatterns = [
     path("", home, name="home"),  # Rota principal
     path("produtos/", produtos, name="produtos"),  # Rota para produtos
     path("contatos/", contatos, name="contatos"),  # Rota para contatos
+    path('matricula/', matricula, name='matricula'),
+    path('matricula/sucesso/', matricula_sucesso, name='matricula_sucesso'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

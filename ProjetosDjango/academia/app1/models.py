@@ -16,7 +16,15 @@ class Produto(models.Model):
 
     def __str__(self):
         return self.nome
+    
+class Matricula(models.Model):
+    nome = models.CharField(max_length=100)
+    email = models.EmailField()
+    plano = models.CharField(max_length=50)
+    observacoes = models.TextField(blank=True)
 
+    def __str__(self):
+        return self.nome
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

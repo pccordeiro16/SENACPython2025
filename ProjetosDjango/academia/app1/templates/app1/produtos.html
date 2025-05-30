@@ -11,6 +11,7 @@
 {% block content %}
 
 <section class="product-section">
+    <h2 class="text-center my-3">Nossos Produtos</h2>
     <div class="container mt-4">
         <div class="row">
             {% for produto in produtos %}
@@ -23,7 +24,7 @@
                         <p class="card-text flex-grow-1">{{ produto.descricao }}</p>
                         <div class="mt-auto">
                             <p class="text-white text-success fw-bold mb-2">R$ {{ produto.preco }}</p>
-                            <a href="#" class="btn btn-outline-primary btn-product w-100">Detalhes</a>
+                            <a href="#" class="btn btn-outline-primary btn-product w-100">Comprar</a>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Produto, UserProfile
 from django.conf import settings
-from .forms import ProdutoForm, ProfileForm
+from .forms import ProdutoForm, ProfileForm, MatriculaForm
 import os
 
 
@@ -17,6 +17,19 @@ def produtos(request):
 def contatos(request):
     return render(request, "app1/contatos.html")
 
+def matricula(request):
+    if request.method == 'POST':
+        form = MatriculaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('matricula_sucesso')
+    else:
+        form = MatriculaForm()
+    
+    return render(request, 'app1/matricula.html', {'form': form})
+
+def matricula_sucesso(request):
+    return render(request, 'app1/matricula_sucesso.html')
 
 def list_profile_pics(request):
     """
@@ -49,3 +62,4 @@ def upload_profile(request):
     else:
         form = ProfileForm()
     return render(request, "app1/upload_profile.html", {"form": form})
+
