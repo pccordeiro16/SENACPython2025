@@ -5,15 +5,14 @@
     <div class="container py-4">
         <div class="row">
             <!-- Seção About -->
-            <div class="col-md-4">
+            <div class="col-12 col-md-3">
                 <h5>Sobre Nós</h5>
                 <p>Carregamos o comprometimento com a saúde, bem-estar e qualidade de vida.
                     Oferecendo estrutura moderna, equipe qualificada e um ambiente motivador para os seus objetivos! </p>
-                <img src="{% static 'app1/img/IMG_5571.png' %}" alt="Logo" width="70">
             </div>
 
             <!-- Links Rápidos -->
-            <div class="col-md-4">
+            <div class="col-12 col-md-3">
                 <h5>Links Úteis</h5>
                 <ul class="list-unstyled">
                     <li><a href="{% url 'home' %}" class="list-item text-white">Home</a></li>
@@ -23,17 +22,25 @@
             </div>
 
             <!-- Contato -->
-            <div class="col-md-4">
+            <div class="col-12 col-md-3">
                 <h5>Contato</h5>
                 <ul class="list-unstyled">
-                    <li><i class="bi bi-envelope"></i> contato@empresa.com</li>
+                    <li><i class="bi bi-envelope"></i> contatoax@gmail.com</li>
                     <li><i class="bi bi-phone"></i> (21) 1234-5678</li>
                 </ul>
+            </div>
+            <div class="col-12 col-md-3 border-start border-light ps-3 mt-4 mt-md-0 d-flex align-items-center justify-content-center">
+                <a href="{% url 'home' %}" class="me-3">
+                    <img src="{% static 'app1/img/IMG_5571.png' %}" alt="Logo Academia X" width="100">
+                </a>
+                <a href="https://www.gsuplementos.com.br/">
+                    <img src="{% static 'app1/img/growth_logo.png' %}" target="_blank" rel="noopener noreferrer" alt="Logo Growth Suplementos" width="100">
+                </a>
             </div>
         </div>
         <hr class="bg-light">
         <div class="text-center">
-            <p class="mb-0">&copy; {% now "Y" %} Minha Empresa. Todos os direitos reservados.</p>
+            <p class="mb-0">&copy; {% now "Y" %} Academia X. Todos os direitos reservados.</p>
         </div>
     </div>
 </footer>

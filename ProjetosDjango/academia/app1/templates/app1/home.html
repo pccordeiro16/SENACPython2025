@@ -2,20 +2,22 @@
 
 {% block title %}Página Inicial{% endblock %}
 
-{% block content %}
+{% block navbar %}
+    {% with header_title="Bem-vindo ao nosso site" header_subtitle="Conheça nossos produtos ou fale conosco"  %}
+        {% include 'app1/partials/navbar.html' %}
+    {% endwith %}
+{% endblock %}
 
-<!-- Header personalizado para a home -->
-{% with "Bem-vindo ao nosso site" as header_title %}
-{% with "Conheça nossos produtos ou fale conosco" as header_subtitle %}
-    {% include 'app1/partials/_header.html' %}
-{% endwith %}
-{% endwith %}
+{% block content %}
 
 {% load static %}
 
-<section class="hero-section text-center text-white mb-4" style='background-image: url({% static "app1/img/banner-01.jpg" %});'>
-    <div class="overlay"></div>
-    <div class="position-relative z-2">
+<section class="hero-section text-white mb-4">
+    <div class="banner-wrapper">
+        <img src="{% static 'app1/img/banner-01.jpg' %}" alt="Banner" class="banner-img">
+        <div class="banner-gradient"></div>
+    </div>
+    <div class="banner-content text-center">
         <img src="{% static 'app1/img/IMG_5571.png' %}" alt="Logo" width="200">
         <h1 class="display-4 fw-bold mb-4">Seu shape começa aqui!</h1>
         <p class="lead">
@@ -25,9 +27,50 @@
     </div>
 </section>
 
+<section class="servicos-section container my-5">
+    <h2 class="text-white text-center mb-4">Confira todos os nossos serviços!</h2>
+
+    <a href="#" class="servico-box">
+        <div class="servico-img">
+            <img src="{% static 'app1/img/servico-01.jpg' %}" alt="Serviço 1">
+        </div>
+        <div class="servico-info">
+            <h3>Musculação</h3>
+            <p>Equipamentos modernos e ambiente motivador para você alcançar seus objetivos com qualidade e segurança.</p>
+        </div>
+    </a>
+    <a href="#" class="servico-box reverse">
+        <div class="servico-img">
+            <img src="{% static 'app1/img/servico-02.jpg' %}" alt="Serviço 2">
+        </div>
+        <div class="servico-info">
+            <h3>Avaliação Física</h3>
+            <p>Receba uma análise completa da sua composição corporal para treinar com foco e eficiência.</p>
+        </div>
+    </a>
+    <a href="#" class="servico-box">
+        <div class="servico-img">
+            <img src="{% static 'app1/img/servico-03.jpg' %}" alt="Serviço 3">
+        </div>
+        <div class="servico-info">
+            <h3>Lutas</h3>
+            <p>Treinos de boxe, muay thai e outras artes marciais para melhorar seu condicionamento e autoconfiança.</p>
+        </div>
+    </a>
+    <a href="#" class="servico-box reverse">
+        <div class="servico-img">
+            <img src="{% static 'app1/img/servico-04.png' %}" alt="Serviço 4">
+        </div>
+        <div class="servico-info">
+            <h3>Aulas Coletivas</h3>
+            <p>Participe de aulas dinâmicas como funcional, alongamento e dança, tudo em grupo e com muita energia.</p>
+        </div>
+    </a>
+</section>
+
 <div class="container mt-4">
-    <section class="destaques mb-5">
-        <h2 class="destaques text-center mb-4 fw-bold">Destaques</h2>
+    <section class="destaques-section mb-5">
+        <h2 class="destaques text-center mb-4">Destaques</h2>
         <div class="row g-4">
             {% for produto in destaques %}
             <div class="col-md-4">

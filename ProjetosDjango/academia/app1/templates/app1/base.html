@@ -20,25 +20,19 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <!-- Inclusão da Navbar -->
-    {% include 'app1/partials/navbar.html' %}
-    
-    <!-- Container principal com margem e padding -->
-    <main class="flex-grow-1 my-4">
-        <!-- Bloco de conteúdo principal -->
+    <!-- Bloco para navbar personalizada -->
+    {% block navbar %}
+        {% include 'app1/partials/navbar.html' %}
+    {% endblock %}
+
+    <!-- Conteúdo principal -->
+    <main class="flex-grow-1">
         {% block content %}{% endblock %}
     </main>
     
-    <!-- Inclusão do Footer -->
     {% include 'app1/partials/_footer.html' %}
-    
-    <!-- Bootstrap Bundle com Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Inclusão dos scripts padrão -->
     {% include 'app1/partials/_scripts.html' %}
-    
-    <!-- Bloco para JS específico de páginas -->
     {% block extra_js %}{% endblock %}
 </body>
 </html>

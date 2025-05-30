@@ -2,15 +2,15 @@
 
 {% block title %}Fale Conosco{% endblock %}
 
+{% block navbar %}
+    {% with header_title="Fale Conosco" header_subtitle="Estamos aqui para ajudar"  %}
+        {% include 'app1/partials/navbar.html' %}
+    {% endwith %}
+{% endblock %}
+
 {% block content %}
 
-<!-- Header personalizado para contatos -->
-{% with "Fale Conosco" as header_title %}
-{% with "Estamos aqui para ajudar" as header_subtitle %}
-    {% include 'app1/partials/_header.html' %}
-{% endwith %}
-{% endwith %}
-
+<section class="contact-section">
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-6">
@@ -51,4 +51,5 @@
         </div>
     </div>
 </div>
+</section>
 {% endblock %}

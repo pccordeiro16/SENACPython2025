@@ -2,40 +2,41 @@
 
 {% block title %}Nossos Produtos{% endblock %}
 
+{% block navbar %}
+    {% with header_title="Nossos Produtos" header_subtitle="Explore nosso catálogo"  %}
+        {% include 'app1/partials/navbar.html' %}
+    {% endwith %}
+{% endblock %}
+
 {% block content %}
 
-<!-- Header personalizado para produtos -->
-{% with "Nossos Produtos" as header_title %}
-{% with "Conheça nossa linha completa" as header_subtitle %}
-    {% include 'app1/partials/_header.html' %}
-{% endwith %}
-{% endwith %}
-
-<div class="container mt-4">
-    <div class="row">
-        {% for produto in produtos %}
-        <div class="col-md-3 mb-4">
-            <a href="#" class="card-link">
-            <div class="card product-card h-100 shadow-sm">
-                <div class="bg-black text-white card-body d-flex flex-column">
-                    <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" class="img-fluid mb-3">
-                    <h5 class="card-title">{{ produto.nome }}</h5>
-                    <p class="card-text flex-grow-1">{{ produto.descricao }}</p>
-                    <div class="mt-auto">
-                        <p class="text-white text-success fw-bold mb-2">R$ {{ produto.preco }}</p>
-                        <a href="#" class="btn btn-outline-primary btn-product w-100">Detalhes</a>
+<section class="product-section">
+    <div class="container mt-4">
+        <div class="row">
+            {% for produto in produtos %}
+            <div class="col-md-3 mb-4">
+                <a href="#" class="card-link">
+                <div class="card product-card h-100 shadow-sm">
+                    <div class="bg-black text-white card-body d-flex flex-column">
+                        <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" class="img-fluid mb-3">
+                        <h5 class="card-title">{{ produto.nome }}</h5>
+                        <p class="card-text flex-grow-1">{{ produto.descricao }}</p>
+                        <div class="mt-auto">
+                            <p class="text-white text-success fw-bold mb-2">R$ {{ produto.preco }}</p>
+                            <a href="#" class="btn btn-outline-primary btn-product w-100">Detalhes</a>
+                        </div>
                     </div>
                 </div>
+                </a>
             </div>
-            </a>
-        </div>
-        {% empty %}
-        <div class="col-12">
-            <div class="alert alert-warning">
-                Nenhum produto disponível no momento.
+            {% empty %}
+            <div class="col-12">
+                <div class="alert alert-warning">
+                    Nenhum produto disponível no momento.
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-</div>
+</section>
 {% endblock %}
