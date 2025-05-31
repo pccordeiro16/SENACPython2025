@@ -1,0 +1,17 @@
+{% extends 'appsenac/base.html' %}
+{% load static %}
+
+{% block title %}Página em Construção - Senac RJ{% endblock %}
+
+{% block content %}
+<section class="construction-section">
+    <div class="container">
+        <div class="construction-content">
+            <img src="{% static 'appsenac/img/construction.png' %}" alt="Página em Construção">
+            <h2>Página em Construção</h2>
+            <p>Estamos trabalhando para trazer essa novidade para você em breve. Fique ligado!</p>
+            <a href="{% url 'home' %}" class="btn-primary">Voltar para a Home</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

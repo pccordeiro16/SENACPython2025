@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from appsenac.views import home, contatos, sobre_senac
+from appsenac.views import home, contatos, sobre_senac, cursos
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -27,4 +27,6 @@ urlpatterns = [
     path("", home, name="home"),
     path("contatos/", contatos, name="contatos"),
     path("sobre_senac/", sobre_senac, name="sobre_senac"),
+    path("contatos/", contatos, name="contatos"),
+    path("cursos/", cursos, name="cursos"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

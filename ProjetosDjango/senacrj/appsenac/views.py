@@ -13,26 +13,14 @@ def produtos(request):
     produtos = Produto.objects.filter(disponivel=True)
     return render(request, "appsenac/produtos.html", {"produtos": produtos})
 
-
 def contatos(request):
     return render(request, "appsenac/contatos.html")
 
 def sobre_senac(request):
     return render(request, "appsenac/sobre_senac.html")
 
-def matricula(request):
-    if request.method == 'POST':
-        form = MatriculaForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('matricula_sucesso')
-    else:
-        form = MatriculaForm()
-    
-    return render(request, 'appsenac/matricula.html', {'form': form})
-
-def matricula_sucesso(request):
-    return render(request, 'appsenac/matricula_sucesso.html')
+def cursos(request):
+    return render(request, "appsenac/cursos.html")
 
 def list_profile_pics(request):
     """

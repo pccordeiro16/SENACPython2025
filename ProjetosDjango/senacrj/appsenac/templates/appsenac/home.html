@@ -9,7 +9,7 @@
         <div class="container">
             <h2>Invista no Seu Futuro com o Senac RJ</h2>
             <p>Educação profissional de excelência que conecta você ao mercado de trabalho.</p>
-            <a href="#" class="btn-primary">Descubra Nossos Cursos</a>
+            <a href="{% url 'cursos' %}" class="btn-primary">Descubra Nossos Cursos</a>
         </div>
     </section>
 
@@ -20,7 +20,7 @@
                 <div class="about-text">
                     <p>O Senac Rio de Janeiro é referência em educação profissional, oferecendo cursos que acompanham as tendências do mercado e preparam você para os desafios do futuro. Com mais de 70 anos de história, nosso compromisso é com a qualidade do ensino e o desenvolvimento de carreiras de sucesso.</p>
                     <p>Nossa metodologia foca na prática, com laboratórios modernos e professores atuantes no mercado. Venha fazer parte da nossa história de sucesso!</p>
-                    <a href="#" class="btn-secondary">Saiba Mais Sobre o Senac</a>
+                    <a href="{% url 'sobre_senac' %}" class="btn-secondary">Saiba Mais Sobre o Senac</a>
                 </div>
                 <div class="about-image">
                     <img src="{% static 'appsenac/img/senac-building.jpg' %}" alt="Fachada do Senac RJ">
@@ -37,19 +37,19 @@
                     <img src="{% static 'appsenac/img/curso-ti.jpg' %}" alt="Programação e TI">
                     <h4>Programação e Desenvolvimento</h4>
                     <p>Dominando as linguagens mais demandadas do mercado de tecnologia.</p>
-                    <a href="#" class="btn-card">Ver Curso</a>
+                    <a href="{% url 'cursos' %}" class="btn-card d-flex">Ver Curso</a>
                 </div>
                 <div class="card">
                     <img src="{% static 'appsenac/img/curso-gastronomia.jpg' %}" alt="Cozinheiro profissional">
                     <h4>Gastronomia e Alimentos</h4>
                     <p>Transforme sua paixão pela culinária em uma profissão de sucesso.</p>
-                    <a href="#" class="btn-card">Ver Curso</a>
+                    <a href="{% url 'cursos' %}" class="btn-card d-flex">Ver Curso</a>
                 </div>
                 <div class="card">
                     <img src="{% static 'appsenac/img/curso-moda.jpg' %}" alt="Design de moda">
                     <h4>Moda e Design</h4>
                     <p>Crie, inove e desfile suas ideias no universo da moda.</p>
-                    <a href="#" class="btn-card">Ver Curso</a>
+                    <a href="{% url 'cursos' %}" class="btn-card d-flex">Ver Curso</a>
                 </div>
             </div>
         </div>

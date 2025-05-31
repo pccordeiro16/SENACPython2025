@@ -10,12 +10,19 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'sobre_senac' %}">Sobre o Senac</a></li>
-                <li><a href="#">Cursos</a></li>
-                <li><a href="{% url 'contatos' %}">Contato</a></li>
-            </ul>
+            <div class="col-12">
+                <ul class="links-list">
+                    <li class="nav-logo-item">
+                        <a class="list-item" href="{% url 'home' %}">
+                            <img src="{% static 'appsenac/img/senac.png' %}" alt="Logo Senac" width="90" class="nav-logo">
+                        </a>
+                    </li>
+                    <li><a class="list-item" href="{% url 'home' %}">Home</a></li>
+                    <li><a class="list-item" href="{% url 'sobre_senac' %}">Sobre o Senac</a></li>
+                    <li><a class="list-item" href="{% url 'cursos' %}">Cursos</a></li>
+                    <li><a class="list-item" href="{% url 'contatos' %}">Contato</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
